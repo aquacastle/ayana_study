@@ -34,4 +34,41 @@ body{
     color: #fff;
     font-size: 20px;
     font-weight: 600;
+    position: relative;
+    margin-top: 200px;
 }
+
+.button-kirby{
+    position: absolute;
+    top: -60px;
+    left: -120px;
+}
+
+.container {
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: center;
+    grid-template-columns: repeat(auto-fit, 400px);
+    gap: 10px;
+    /*右側に10px残っちゃうのはどうしたらいいの？*/
+}
+
+
+
+
+
+    /*display: flex;*/
+    /*justify-content: center;*/
+    /*align-items: center;*/
+    /*gap: 10px;*/
+
+    /*p{*/
+    /*    flex-basis: 600px;*/
+    /*}*/
+
+    /*これじゃだめな理由教えて下さい*/
+    /*また大きくした時のいい感じのサイズ指定ありますか？*/
+    /*img{*/
+    /*      width: 600px;*/
+    /*      height: auto;*/
+    /*}*/
