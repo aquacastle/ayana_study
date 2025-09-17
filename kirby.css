@@ -7,6 +7,7 @@
 
 img{
     max-width: 100%;
+    vertical-align: bottom;
 }
 
 body{
@@ -21,6 +22,7 @@ body{
 }
 
 .link-button{
+    display:block;
     width: fit-content;
     margin-inline: auto;
     background-color: #e52c77;
@@ -36,6 +38,22 @@ body{
     font-weight: 600;
     position: relative;
     margin-top: 200px;
+    text-decoration: none;
+    transition: all 0.25s ease-out;
+
+    p{
+        transition: all 0.25s ease-out;
+    }
+
+    &:hover{
+        /*opacity: 0.5;*/
+        background-color: #aaa;
+        border: 4px solid #e52c77;
+
+        p{
+            color: #e52c77;
+        }
+    }
 }
 
 .button-kirby{
@@ -45,30 +63,27 @@ body{
 }
 
 .container {
-    display: grid;
-    grid-auto-flow: column;
+    /*    width: fit-content;*/
+    /*    margin-inline: auto;*/
+    /*    display: grid;*/
+    /*    grid-template-columns: repeat(3, 400px);*/
+    /*    gap: 10px;*/
+
+
+    display: flex;
     justify-content: center;
-    grid-template-columns: repeat(auto-fit, 400px);
+    align-items: center;
     gap: 10px;
-    /*右側に10px残っちゃうのはどうしたらいいの？*/
+
+    p {
+        flex-basis: 600px;
+        height: 100%;
+
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
 }
-
-
-
-
-
-    /*display: flex;*/
-    /*justify-content: center;*/
-    /*align-items: center;*/
-    /*gap: 10px;*/
-
-    /*p{*/
-    /*    flex-basis: 600px;*/
-    /*}*/
-
-    /*これじゃだめな理由教えて下さい*/
-    /*また大きくした時のいい感じのサイズ指定ありますか？*/
-    /*img{*/
-    /*      width: 600px;*/
-    /*      height: auto;*/
-    /*}*/
