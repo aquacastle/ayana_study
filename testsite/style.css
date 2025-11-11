@@ -1,33 +1,36 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
 
-img{
+img {
     max-width: 100%;
     vertical-align: bottom;
 }
 
-body{
+body {
     color: #333333;
+    font-family: "arial", sans-serif;
 }
 
-.header-logo{
+.header-logo {
     width: 280px;
     padding-top: 50px;
     padding-bottom: 50px;
     margin-inline: auto;
 }
 
-.top-img{
-    width: 100%;
+.top-img {
+    background-image: url("./assets/img/pc_main-visual.jpg");
+    background-size: auto 590px;
+    background-position: center;
     height: 590px;
     background-color: darkturquoise;
 }
 
-.menu{
+.menu {
     padding-top: 40px;
     padding-bottom: 40px;
     display: flex;
@@ -38,9 +41,10 @@ body{
     letter-spacing: 0.1em;
 }
 
-.contents{
-    padding-left: 165px;
-    padding-right: 165px;
+.contents {
+    width: fit-content;
+    margin-inline: auto;
+    justify-content: center;
 }
 
 .concept {
@@ -56,57 +60,74 @@ body{
         padding-left: 40px;
         padding-top: 179px;
         font-size: 16px;
-
-        h1 {
-            margin-top: 20px;
-            margin-bottom: 30px;
-            font-size: 32px;
-            color: #24A8BF;
-        }
     }
+
+    h1 {
+        margin-top: 20px;
+        margin-bottom: 30px;
+        font-size: 32px;
+        color: #24A8BF;
+        font-family: "Hiragino Kaku Gothic ProN", sans-serif;
+    }
+
+    /*p:nth-child(2) {*/
+    /*    font-family: "Hiragino Kaku Gothic ProN", sans-serif;*/
+    /*}*/
+    /*2つめのP要素に適応させたいけど、どうやったらいいかわかりませんでした*/
 }
 
-.blog-title{
+.concept-sentence{
+    font-family: "Hiragino Kaku Gothic ProN", sans-serif;
+}
+
+.blog-title {
     text-align: center;
     font-size: 13px;
 
-    h1{
+    h1 {
         font-size: 32px;
         color: #24A8BF;
     }
 }
 
-.blog-contents{
+.blog-contents {
     margin-top: 30px;
     display: grid;
     width: fit-content;
     margin-inline: auto;
     justify-content: center;
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 30px;
 
-    div{
-        width:350px;
+    div {
+        width: 350px;
+
+        &:hover {
+            opacity: 0.6;
+        }
     }
 
-    img{
+    img {
         width: 350px;
     }
 
-    .title{
+    .title {
         width: 315px;
         font-size: 15px;
         line-height: 2.4;
+        font-family: "Hiragino Kaku Gothic ProN", sans-serif;
+        font-weight: 600;
     }
 
-    .blog-date{
+    .blog-date {
         font-size: 12px;
         line-height: 1.4;
         letter-spacing: 0.05em;
     }
+
 }
 
-.blog-bottom{
+.blog-button {
     margin-top: 30px;
     margin-bottom: 152px;
     width: fit-content;
@@ -125,7 +146,23 @@ body{
     /*align-items: center;*/
     /*gap: 47.5px;*/
 
-    .triangle{
+    &::before {
+        content: "";
+        display: block;
+        position: absolute;
+        left: 25.5px;
+        top: 0;
+        bottom: 0;
+        margin: auto 0;
+        background-color: #24A8BF;
+        width: 5px;
+        height: 9px;
+        clip-path: polygon(100% 0, 0 50%, 100% 100%);
+    }
+
+    &::after {
+        content: "";
+        display: block;
         position: absolute;
         right: 25.5px;
         top: 0;
@@ -136,9 +173,34 @@ body{
         height: 9px;
         clip-path: polygon(0 0, 0% 100%, 100% 50%);
     }
+
+    &:hover {
+        background: #24A8BF;
+        color: #fff;
+
+        &::before {
+            background-color: #fff;
+        }
+
+        &::after {
+            background-color: #fff;
+        }
+    }
+
+    /*    .triangle{*/
+    /*        position: absolute;*/
+    /*        right: 25.5px;*/
+    /*        top: 0;*/
+    /*        bottom: 0;*/
+    /*        margin: auto 0;*/
+    /*        background-color: #24A8BF;*/
+    /*        width: 5px;*/
+    /*        height: 9px;*/
+    /*        clip-path: polygon(0 0, 0% 100%, 100% 50%);*/
+    /*    }*/
 }
 
-.footer{
+.footer {
     height: 200px;
     background-color: #000;
     color: #888;
@@ -146,7 +208,7 @@ body{
     font-size: 12px;
 
 
-    .footer-logo{
+    .footer-logo {
         padding-top: 70px;
         padding-bottom: 50px;
         height: 36px;
