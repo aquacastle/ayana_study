@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -10,9 +12,16 @@ img {
     vertical-align: bottom;
 }
 
+a {
+    text-decoration: none;
+    color: #333333;
+    transition: all 0.25s ease-out;
+}
+
 body {
     color: #333333;
-    font-family: "arial", sans-serif;
+    font-family: "Roboto", "Noto Sans JP", sans-serif;
+    font-weight: 400;
 }
 
 .header-logo {
@@ -20,14 +29,27 @@ body {
     padding-top: 50px;
     padding-bottom: 50px;
     margin-inline: auto;
+
+    @media screen and (max-width: 768px) {
+        width: 50%;
+        padding-inline: 6%;
+    }
 }
 
 .top-img {
     background-image: url("./assets/img/pc_main-visual.jpg");
-    background-size: auto 590px;
+    background-size: cover;
+    background-repeat: no-repeat;
     background-position: center;
     height: 590px;
     background-color: darkturquoise;
+
+    @media screen and (max-width: 1120px) {
+        height: 300px;
+    }
+    @media screen and (max-width: 768px) {
+        height: 200px;
+    }
 }
 
 .menu {
@@ -39,6 +61,11 @@ body {
     gap: 80px;
     line-height: 18px;
     letter-spacing: 0.1em;
+
+    a:hover {
+        opacity: 0.6;
+    }
+
 }
 
 .contents {
@@ -51,15 +78,35 @@ body {
     margin-bottom: 100px;
     margin-inline: auto;
     display: flex;
+    /*contentsを中に入れていい位置に戻せない*/
+
+    @media screen and (max-width: 1120px) {
+        width: 100%;
+        padding-inline: 6%;
+    }
+
+    @media screen and (max-width: 768px) {
+        display: block;
+    }
 
     img {
         width: 555px;
+
+        @media screen and (max-width: 768px) {
+            width: 70%;
+            margin: 0 auto;
+        }
     }
 
     .concept-text {
         padding-left: 40px;
         padding-top: 179px;
         font-size: 16px;
+
+        @media screen and (max-width: 768px) {
+            padding-top: 80px;
+            font-size: 15px;
+        }
     }
 
     h1 {
@@ -68,15 +115,14 @@ body {
         font-size: 32px;
         color: #24A8BF;
         font-family: "Hiragino Kaku Gothic ProN", sans-serif;
-    }
 
-    /*p:nth-child(2) {*/
-    /*    font-family: "Hiragino Kaku Gothic ProN", sans-serif;*/
-    /*}*/
-    /*2つめのP要素に適応させたいけど、どうやったらいいかわかりませんでした*/
+        @media screen and (max-width: 768px) {
+            font-size: 26px;
+        }
+    }
 }
 
-.concept-sentence{
+.concept-sentence {
     font-family: "Hiragino Kaku Gothic ProN", sans-serif;
 }
 
@@ -84,9 +130,17 @@ body {
     text-align: center;
     font-size: 13px;
 
+    @media screen and (max-width: 768px) {
+        font-size: 12px;
+    }
+
     h1 {
         font-size: 32px;
         color: #24A8BF;
+
+        @media screen and (max-width: 768px) {
+            font-size: 30px;
+        }
     }
 }
 
@@ -99,16 +153,34 @@ body {
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
 
+    @media screen and (max-width: 1120px) {
+        width: 100%;
+        padding-inline: 6%;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media screen and (max-width: 670px) {
+        width: 100%;
+        padding-inline: 6%;
+        grid-template-columns: repeat(1, 1fr);
+    }
+
     div {
         width: 350px;
 
-        &:hover {
+        a:hover {
             opacity: 0.6;
+        }
+
+        @media screen and (max-width: 1120px) {
+            width: 100%;
         }
     }
 
     img {
-        width: 350px;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
     }
 
     .title {
@@ -127,6 +199,10 @@ body {
 
 }
 
+.thumbnail {
+    aspect-ratio: 16/9;
+}
+
 .blog-button {
     margin-top: 30px;
     margin-bottom: 152px;
@@ -134,13 +210,12 @@ body {
     margin-inline: auto;
     border: 1px solid #24A8BF;
     border-radius: 3px;
-    padding-top: 18px;
-    padding-bottom: 18px;
-    padding-left: 72px;
-    padding-right: 72px;
+
     color: #24A8BF;
     font-size: 15px;
     position: relative;
+
+    transition: all 0.25s ease-out;
     /*display: flex;*/
     /*justify-content: center;*/
     /*align-items: center;*/
@@ -158,6 +233,7 @@ body {
         width: 5px;
         height: 9px;
         clip-path: polygon(100% 0, 0 50%, 100% 100%);
+        transition: all 0.25s ease-out;
     }
 
     &::after {
@@ -172,6 +248,7 @@ body {
         width: 5px;
         height: 9px;
         clip-path: polygon(0 0, 0% 100%, 100% 50%);
+        transition: all 0.25s ease-out;
     }
 
     &:hover {
@@ -185,6 +262,21 @@ body {
         &::after {
             background-color: #fff;
         }
+
+        a {
+            color: #fff;
+        }
+    }
+
+    a {
+        display: block;
+        width: 100%;
+        height: 100%;
+        padding-top: 18px;
+        padding-bottom: 18px;
+        padding-left: 72px;
+        padding-right: 72px;
+        color: #24A8BF;
     }
 
     /*    .triangle{*/
@@ -207,12 +299,11 @@ body {
     text-align: center;
     font-size: 12px;
 
-
     .footer-logo {
-        padding-top: 70px;
-        padding-bottom: 50px;
         height: 36px;
         width: 180px;
+        padding-top: 70px;
+        padding-bottom: 50px;
         margin-inline: auto;
     }
 }
