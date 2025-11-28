@@ -65,20 +65,17 @@ body {
     a:hover {
         opacity: 0.6;
     }
-
 }
 
 .contents {
-    width: fit-content;
+    width: 1110px;
     margin-inline: auto;
-    justify-content: center;
+    /*justify-content: center;*/
+    display: flex;
 }
 
 .concept {
     margin-bottom: 100px;
-    margin-inline: auto;
-    display: flex;
-    /*contentsを中に入れていい位置に戻せない*/
 
     @media screen and (max-width: 1120px) {
         width: 100%;
@@ -124,6 +121,10 @@ body {
 
 .concept-sentence {
     font-family: "Hiragino Kaku Gothic ProN", sans-serif;
+}
+
+.blog{
+    display: block;
 }
 
 .blog-title {
