@@ -68,9 +68,11 @@ body {
 }
 
 .contents {
-    width: 1110px;
+    max-width: 1110px;
     margin-inline: auto;
-    /*justify-content: center;*/
+}
+
+.contents-flex{
     display: flex;
 }
 
