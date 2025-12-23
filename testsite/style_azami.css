@@ -1,48 +1,58 @@
-*{
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Reggae+One&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
-html{
-    font-size: 62.5%;
-    font-family: "Roboto","Reggae One", sans-serif;
-}
-
-
-img{
+img {
     max-width: 100%;
     vertical-align: bottom;
 }
 
-body{
+a {
+    text-decoration: none;
     color: #333333;
-    line-height: calc(43/23);
+    transition: all 0.25s ease-out;
 }
 
-.header-logo{
+body {
+    color: #333333;
+    font-family: "Roboto", "Noto Sans JP", sans-serif;
+    font-weight: 400;
+}
+
+.header-logo {
     width: 280px;
     padding-top: 50px;
     padding-bottom: 50px;
     margin-inline: auto;
+
+    @media screen and (max-width: 768px) {
+        width: 50%;
+        padding-inline: 6%;
+    }
 }
 
-.top-img{
-    width: 100%;
-    height: 590px;
-
-    /*background-image: url(assets/img/pc_main-visual.jpg);*/
-    background-repeat: no-repeat;
+.top-img {
+    background-image: url("./assets/img/pc_main-visual.jpg");
     background-size: cover;
+    background-repeat: no-repeat;
     background-position: center;
+    height: 590px;
+    background-color: darkturquoise;
 
-    font-size: 1.8rem;
-
+    @media screen and (max-width: 1120px) {
+        height: 300px;
+    }
+    @media screen and (max-width: 768px) {
+        height: 200px;
+    }
 }
 
-.menu{
+.menu {
     padding-top: 40px;
     padding-bottom: 40px;
     display: flex;
@@ -51,20 +61,44 @@ body{
     gap: 80px;
     line-height: 18px;
     letter-spacing: 0.1em;
+
+    a:hover {
+        opacity: 0.6;
+    }
+
 }
 
-.contents{
-    padding-left: 165px;
-    padding-right: 165px;
+.contents {
+    width: 100%;
+    margin-inline: auto;
+    justify-content: center;
+    max-width: 1170px;
+    padding-left: 30px;
+    padding-right: 30px;
 }
 
 .concept {
     margin-bottom: 100px;
     margin-inline: auto;
     display: flex;
+    /*contentsを中に入れていい位置に戻せない*/
+
+    @media screen and (max-width: 1120px) {
+        width: 100%;
+        padding-inline: 6%;
+    }
+
+    @media screen and (max-width: 768px) {
+        display: block;
+    }
 
     img {
         width: 555px;
+
+        @media screen and (max-width: 768px) {
+            width: 70%;
+            margin: 0 auto;
+        }
     }
 
     .concept-text {
@@ -72,79 +106,142 @@ body{
         padding-top: 179px;
         font-size: 16px;
 
-        h1 {
-            margin-top: 20px;
-            margin-bottom: 30px;
-            font-size: 32px;
-            color: #24A8BF;
+        @media screen and (max-width: 768px) {
+            padding-top: 80px;
+            font-size: 15px;
+        }
+    }
+
+    h1 {
+        margin-top: 20px;
+        margin-bottom: 30px;
+        font-size: 32px;
+        color: #24A8BF;
+        font-family: "Hiragino Kaku Gothic ProN", sans-serif;
+
+        @media screen and (max-width: 768px) {
+            font-size: 26px;
         }
     }
 }
 
-.blog-title{
+.concept-sentence {
+    font-family: "Hiragino Kaku Gothic ProN", sans-serif;
+}
+
+.blog-title {
     text-align: center;
     font-size: 13px;
 
-    h1{
+    @media screen and (max-width: 768px) {
+        font-size: 12px;
+    }
+
+    h1 {
         font-size: 32px;
         color: #24A8BF;
+
+        @media screen and (max-width: 768px) {
+            font-size: 30px;
+        }
     }
 }
 
-.blog-contents{
+.blog-contents {
     margin-top: 30px;
     display: grid;
     width: fit-content;
     margin-inline: auto;
     justify-content: center;
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 30px;
 
-    div{
-        width:350px;
+    @media screen and (max-width: 1120px) {
+        width: 100%;
+        padding-inline: 6%;
+        grid-template-columns: repeat(2, 1fr);
     }
 
-    img{
+    @media screen and (max-width: 670px) {
+        width: 100%;
+        padding-inline: 6%;
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    div {
         width: 350px;
+
+        a:hover {
+            opacity: 0.6;
+        }
+
+        @media screen and (max-width: 1120px) {
+            width: 100%;
+        }
     }
 
-    .title{
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .title {
         width: 315px;
         font-size: 15px;
         line-height: 2.4;
-        font-family: "Reggae One", sans-serif;
+        font-family: "Hiragino Kaku Gothic ProN", sans-serif;
+        font-weight: 600;
     }
 
-    .blog-date{
+    .blog-date {
         font-size: 12px;
         line-height: 1.4;
         letter-spacing: 0.05em;
     }
+
 }
 
-.blog-bottom{
+.thumbnail {
+    aspect-ratio: 16/9;
+}
+
+.blog-button {
     margin-top: 30px;
     margin-bottom: 152px;
     width: fit-content;
     margin-inline: auto;
     border: 1px solid #24A8BF;
     border-radius: 3px;
-    padding-top: 18px;
-    padding-bottom: 18px;
-    padding-left: 72px;
-    padding-right: 72px;
+
     color: #24A8BF;
     font-size: 15px;
     position: relative;
+
+    transition: all 0.25s ease-out;
     /*display: flex;*/
     /*justify-content: center;*/
     /*align-items: center;*/
     /*gap: 47.5px;*/
 
-    &::before{
+    &::before {
         content: "";
         display: block;
+        position: absolute;
+        left: 25.5px;
+        top: 0;
+        bottom: 0;
+        margin: auto 0;
+        background-color: #24A8BF;
+        width: 5px;
+        height: 9px;
+        clip-path: polygon(100% 0, 0 50%, 100% 100%);
+        transition: all 0.25s ease-out;
+    }
 
+    &::after {
+        content: "";
+        display: block;
         position: absolute;
         right: 25.5px;
         top: 0;
@@ -154,36 +251,62 @@ body{
         width: 5px;
         height: 9px;
         clip-path: polygon(0 0, 0% 100%, 100% 50%);
+        transition: all 0.25s ease-out;
     }
 
+    &:hover {
+        background: #24A8BF;
+        color: #fff;
 
-    .triangle{
-        position: absolute;
-        right: 25.5px;
-        top: 0;
-        bottom: 0;
-        margin: auto 0;
-        background-color: #24A8BF;
-        width: 5px;
-        height: 9px;
-        clip-path: polygon(0 0, 0% 100%, 100% 50%);
+        &::before {
+            background-color: #fff;
+        }
+
+        &::after {
+            background-color: #fff;
+        }
+
+        a {
+            color: #fff;
+        }
     }
+
+    a {
+        display: block;
+        width: 100%;
+        height: 100%;
+        padding-top: 18px;
+        padding-bottom: 18px;
+        padding-left: 72px;
+        padding-right: 72px;
+        color: #24A8BF;
+    }
+
+    /*    .triangle{*/
+    /*        position: absolute;*/
+    /*        right: 25.5px;*/
+    /*        top: 0;*/
+    /*        bottom: 0;*/
+    /*        margin: auto 0;*/
+    /*        background-color: #24A8BF;*/
+    /*        width: 5px;*/
+    /*        height: 9px;*/
+    /*        clip-path: polygon(0 0, 0% 100%, 100% 50%);*/
+    /*    }*/
 }
 
-
-.footer{
+.footer {
     height: 200px;
     background-color: #000;
     color: #888;
     text-align: center;
     font-size: 12px;
 
-
-    .footer-logo{
-        padding-top: 70px;
-        padding-bottom: 50px;
+    .footer-logo {
         height: 36px;
         width: 180px;
+        padding-top: 70px;
+        padding-bottom: 50px;
         margin-inline: auto;
     }
 }
